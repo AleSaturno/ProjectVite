@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-const landing = () =>{
+const login = () =>{
 
     const navigate = useNavigate();
 
@@ -9,10 +9,10 @@ const landing = () =>{
     };
     return(
         <div>
-            <h1>Futuro Landing Page</h1>
+            <h1 className='text-4xl font-bold'>Futuro Login Page</h1>
             <button onClick={redirectToHome}>Iniciar Sesion</button>
         </div>
     )
 }
 
-export default landing;
+export default login;
