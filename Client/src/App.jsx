@@ -1,5 +1,11 @@
-import Landing from "./components/Landing/landing"
 import Home from "./components/Home/Home";
+import Login from "./components/Login/login";
+import Register from "./components/Register/register";
+import TasksPage from "./components/Tasks/tasks";
+import NewTask from "./components/Add-Tasks/add-tasks";
+import UpdateTask  from "./components/Tasks-Id/tasks-id";
+import Profile from "./components/Profile/profile";
+
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 const App = () => {
@@ -9,8 +15,13 @@ const App = () => {
     <div>
          <Router>
           <Routes>
-            <Route path='/' element={<Landing/>}/>
-            <Route path='/home' element={<Home/>}/>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/login' element={<Login/>}/>
+            <Route path="/register" element={<Register/>}/>
+            <Route path="/tasks" element={<TasksPage/>}/>
+            <Route path="/add-tasks" element={<NewTask/>}/>
+            <Route path="/tasks/:id" element= {<UpdateTask/>}/>
+            <Route path="profile" element={<Profile/>}/>
           </Routes>
         </Router>
     </div>
