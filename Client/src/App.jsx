@@ -1,10 +1,10 @@
-import Home from "./components/Home/Home";
-import Login from "./components/Login/login";
-import Register from "./components/Register/register";
-import TasksPage from "./components/Tasks/tasks";
-import NewTask from "./components/Add-Tasks/add-tasks";
-import UpdateTask  from "./components/Tasks-Id/tasks-id";
-import Profile from "./components/Profile/profile";
+import Home from "./pages/Home/home";
+import Login from "./pages/Login/login";
+import Register from "./pages/Register/register";
+import TasksPage from "./pages/Tasks/tasks";
+import NewTask from "./pages/Add-Tasks/add-tasks";
+import UpdateTask  from "./pages/Tasks-Id/tasks-id";
+import Profile from "./pages/Profile/profile";
 
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
