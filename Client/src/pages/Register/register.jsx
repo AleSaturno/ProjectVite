@@ -46,7 +46,7 @@ const register = () =>{
                 />
                 {errors.password && <p className='text-red-500'>Password is required</p>}
                 
-                <button type='submit' class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Register</button>
+                <button type='submit' className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Register</button>
             </form>
         </div>
     )
