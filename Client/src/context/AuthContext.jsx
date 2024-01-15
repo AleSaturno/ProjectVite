@@ -19,7 +19,7 @@ export const AuthProvider = ({children}) => {
     const [isAuthenticated , setISAuthenticated] = useState(false);
     const [errors, setErrors] = useState([]);
 
-    const singnup =  async (user) =>{
+    const signup =  async (user) =>{
         try {
             const res = await registerRequest(user)
             console.log(res.data);
@@ -27,13 +27,12 @@ export const AuthProvider = ({children}) => {
             setISAuthenticated(true);
 
         } catch (error) {
-            console.log(error.response);
             setErrors(error.response.data)
         }
     }
 
     return(
-        <AuthContext.Provider value={{singnup, user, isAuthenticated, errors}}>
+        <AuthContext.Provider value={{signup, user, isAuthenticated, errors}}>
             {children}
         </AuthContext.Provider>
     )

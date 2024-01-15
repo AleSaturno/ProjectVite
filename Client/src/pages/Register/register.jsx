@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router';
 const register = () =>{
 
     const {register, handleSubmit, formState:{errors}}  = useForm();
-    const {singnup, isAuthenticated, errors: registerErrors} = useAuth();
+    const {signup, isAuthenticated, errors: registerErrors} = useAuth();
     const navigate = useNavigate()
 
     useEffect(() =>{
@@ -14,17 +14,17 @@ const register = () =>{
     }, [isAuthenticated]);
 
     const onSubmit = handleSubmit(async (values) => {
-        singnup(values);
+        signup(values);
     });
 
     return(
         <div className='bg-zinc-800 max-w-md p-10 rounded-md'>
            {
-            registerErrors.map((errors, i) =>{
-                <div className='bg-red-500 p-2 text-white' key={i}>
-                    {errors}
-                </div>
-            })
+                registerErrors.map((error, i) =>(
+                    <div className='bg-red-500 p-2 text-white' key={i}>
+                        {error}
+                    </div>
+                ))
            }
             <form onSubmit={onSubmit}>
 
