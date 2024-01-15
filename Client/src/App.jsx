@@ -7,24 +7,27 @@ import UpdateTask  from "./pages/Tasks-Id/tasks-id";
 import Profile from "./pages/Profile/profile";
 
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { AuthProvider } from "./context/AuthContext";
 
 const App = () => {
   
 
   return (
-    <div>
-         <Router>
-          <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/login' element={<Login/>}/>
-            <Route path="/register" element={<Register/>}/>
-            <Route path="/tasks" element={<TasksPage/>}/>
-            <Route path="/add-tasks" element={<NewTask/>}/>
-            <Route path="/tasks/:id" element= {<UpdateTask/>}/>
-            <Route path="profile" element={<Profile/>}/>
-          </Routes>
-        </Router>
-    </div>
+    <AuthProvider>
+        <div>
+          <Router>
+            <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/login' element={<Login/>}/>
+              <Route path="/register" element={<Register/>}/>
+              <Route path="/tasks" element={<TasksPage/>}/>
+              <Route path="/add-tasks" element={<NewTask/>}/>
+              <Route path="/tasks/:id" element= {<UpdateTask/>}/>
+              <Route path="profile" element={<Profile/>}/>
+            </Routes>
+          </Router>
+        </div>
+    </AuthProvider>
   )
 }
 
