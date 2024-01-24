@@ -3,36 +3,37 @@ import Login from "./pages/Login/login";
 import Register from "./pages/Register/register";
 import TasksPage from "./pages/Tasks/tasks";
 import NewTask from "./pages/Add-Tasks/add-tasks";
-import UpdateTask  from "./pages/Tasks-Id/tasks-id";
+import UpdateTask from "./pages/Tasks-Id/tasks-id";
 import Profile from "./pages/Profile/profile";
 import ProtectedRoute from "./ProtectedRoute";
 
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
+import { TaskProvider } from "./context/TasksContext";
 
 const App = () => {
-  
-
   return (
     <AuthProvider>
+      <TaskProvider>
         <div>
           <Router>
             <Routes>
-              <Route path='/' element={<Home/>}/>
-              <Route path='/login' element={<Login/>}/>
-              <Route path="/register" element={<Register/>}/>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
 
-              <Route element={<ProtectedRoute/>}>
-                <Route path="/tasks" element={<TasksPage/>}/>
-                <Route path="/add-tasks" element={<NewTask/>}/>
-                <Route path="/tasks/:id" element= {<UpdateTask/>}/>
-                <Route path="profile" element={<Profile/>}/>
+              <Route element={<ProtectedRoute />}>
+                <Route path="/tasks" element={<TasksPage />} />
+                <Route path="/add-tasks" element={<NewTask />} />
+                <Route path="/tasks/:id" element={<UpdateTask />} />
+                <Route path="profile" element={<Profile />} />
               </Route>
             </Routes>
           </Router>
         </div>
+      </TaskProvider>
     </AuthProvider>
-  )
-}
+  );
+};
 
-export default App
+export default App;
