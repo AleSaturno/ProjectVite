@@ -1,11 +1,26 @@
-const tasks = () =>{
-    return(
-        <div>
-            <h1 className='text-4xl font-bold'>
-                Tasks Page
-            </h1>
-        </div>
-    )
-}
+import { useTasks } from "../../context/TasksContext";
+import { useEffect } from "react";
+
+const tasks = () => {
+  const { getTasks, tasks } = useTasks();
+
+  useEffect(() => {
+    getTasks();
+  }, []);
+
+  if(tasks.length === 0) return (<h1>No Tasks</h1>)
+  return (
+    <div>
+        {
+            tasks.map(task => (
+                <div key={task._id}>
+                    <h1>{task.title}</h1>
+                    <p>{task.description}</p>
+                </div>
+            ))
+        }
+    </div>
+  );
+};
 
 export default tasks;
