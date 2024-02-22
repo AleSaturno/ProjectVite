@@ -16,7 +16,8 @@ const App = () => {
     <AuthProvider>
       <TaskProvider>
         <BrowserRouter>
-          <Navbar />
+          <main className="container mx-auto px-10">
+            <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
@@ -29,6 +30,7 @@ const App = () => {
                 <Route path="/profile" element={<Profile />} />
               </Route>
             </Routes>
+          </main>
         </BrowserRouter>
       </TaskProvider>
     </AuthProvider>
