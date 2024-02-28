@@ -1,4 +1,5 @@
 import { useTasks } from "../context/TasksContext";
+import {Link} from 'react-router-dom';
 
 const TaskCard = ({ task }) => {
   const { deleteTask } = useTasks();
@@ -12,7 +13,7 @@ const TaskCard = ({ task }) => {
         <div className="flex gap-x-2 items-center">
           <button onClick={() => {deleteTask(task._id)}}>Delete</button>
 
-          <button>Edit</button>
+          <Link to={`/tasks/${task._id}`}>Edit</Link>
         </div>
       </header>
       <p className="text-slate-300">
