@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="bg-zinc-700 my-3 flex justify-between py-5 px-10 rounded-lg">
       <h1 className="text-2xl font-bold">
-        <Link to="/">Tasks Manager</Link>
+        <Link to={isAuthenticated ? '/tasks' : '/'}>Tasks Manager</Link>
       </h1>
       <ul className="flex gap-x-3">
       
